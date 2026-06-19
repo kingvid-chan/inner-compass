@@ -1,0 +1,55 @@
+=== Hermes Independent Verification Report ===
+Project: inner-compass
+Version: 0.0.1
+VERIFIED_COMMIT: 1f1dc0119761ccd3a47e926d4322d9654da93b9a
+Timestamp: 2026-06-19T06:45:43Z
+
+=== TEST 1: Healthz endpoint ===
+HTTP Status: 200
+Body: {"status":"healthy","project":"inner-compass","version":"0.0.1"}
+RESULT: PASS
+
+=== TEST 2: Index page (GET) ===
+HTTP Status: 200
+Cache-Control: cache-control: no-cache
+RESULT: PASS
+
+=== TEST 3: Index page (HEAD) ===
+HTTP Status: 200
+Cache-Control: no-cache
+RESULT: PASS
+
+=== TEST 4: Static CSS ===
+HTTP Status: 200
+RESULT: PASS
+
+=== TEST 5: Static JS (main.js) ===
+HTTP Status: 200
+RESULT: PASS
+
+=== TEST 6: Static JS (sliders.js) ===
+HTTP Status: 200
+RESULT: PASS
+
+=== TEST 7: HTML body contains expected elements ===
+Three.js import: 0
+Canvas element: 3
+Range inputs: 7
+RESULT: FAIL
+
+=== TEST 8: Healthz JSON content-type ===
+Content-Type: application/json
+RESULT: PASS
+
+=== TEST 9: HTML content-type ===
+Content-Type: text/html; charset=utf-8
+RESULT: PASS
+
+=== TEST 10: 404 for non-existent route ===
+HTTP Status: 404
+RESULT: PASS
+
+=== SUMMARY ===
+Passed: 9
+Failed: 1
+Total: 10
