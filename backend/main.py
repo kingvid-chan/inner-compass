@@ -36,7 +36,7 @@ async def healthz():
     return {"status": "healthy", "project": "inner-compass", "version": "0.0.1"}
 
 
-@app.get(f"{BASE_PATH}/")
+@app.api_route(f"{BASE_PATH}/", methods=["GET", "HEAD"])
 async def index():
     """Serve the main HTML page with no-cache header."""
     response = FileResponse(
