@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inner-compass — 自我内在评价三维坐标系</title>
+  <link rel="stylesheet" href="css/style.css?v=0.0.1">
+</head>
+<body>
+  <div id="app">
+    <!-- Left panel: sliders + coordinate display -->
+    <div id="panel">
+      <h1>🧭 inner-compass</h1>
+      <p class="subtitle">自我内在评价三维坐标系</p>
+
+      <div id="sliders-container">
+        <h2>内在参数</h2>
+
+        <div class="slider-group">
+          <label for="S">感知力 (S): <span id="S-val">5</span></label>
+          <input type="range" id="S" min="1" max="10" value="5" step="0.1">
+        </div>
+
+        <div class="slider-group">
+          <label for="L">逻辑力 (L): <span id="L-val">5</span></label>
+          <input type="range" id="L" min="1" max="10" value="5" step="0.1">
+        </div>
+
+        <div class="slider-group">
+          <label for="Iteration">迭代系数 (Iteration): <span id="Iteration-val">5</span></label>
+          <input type="range" id="Iteration" min="1" max="10" value="5" step="0.1">
+        </div>
+
+        <div class="slider-group">
+          <label for="C">连接深度 (C): <span id="C-val">5</span></label>
+          <input type="range" id="C" min="1" max="10" value="5" step="0.1">
+        </div>
+
+        <div class="slider-group">
+          <label for="W">愿力 (W): <span id="W-val">5</span></label>
+          <input type="range" id="W" min="1" max="10" value="5" step="0.1">
+        </div>
+
+        <div class="slider-group">
+          <label for="F">恐惧 (F): <span id="F-val">5</span></label>
+          <input type="range" id="F" min="1" max="10" value="5" step="0.1">
+        </div>
+
+        <div class="slider-group">
+          <label for="Delta">分别心系数 (Delta): <span id="Delta-val">5</span></label>
+          <input type="range" id="Delta" min="1" max="10" value="5" step="0.1">
+        </div>
+      </div>
+
+      <div id="coords-display">
+        <h2>当前坐标</h2>
+        <div class="coord-row x-coord">X 认知实践轴: <span id="coord-x">250</span></div>
+        <div class="coord-row y-coord">Y 连接轴: <span id="coord-y">25</span></div>
+        <div class="coord-row z-coord">Z 心灵自由轴: <span id="coord-z">-20</span></div>
+      </div>
+    </div>
+
+    <!-- Right: Three.js canvas -->
+    <div id="canvas-container">
+      <canvas id="three-canvas"></canvas>
+    </div>
+  </div>
+
+  <!-- Three.js from CDN via import map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="js/sliders.js?v=0.0.1"></script>
+  <script type="module" src="js/main.js?v=0.0.1"></script>
+</body>
+</html>

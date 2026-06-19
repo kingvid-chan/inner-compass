@@ -1,0 +1,22 @@
+{
+  "session_id": "claude-0.0.1",
+  "iteration": "0.0.1",
+  "step": "tasks_defined",
+  "status": "completed",
+  "timestamp": "2026-06-19T00:00:00Z",
+  "outputs": [
+    "docs/iterations/0.0.1-tasks.md"
+  ],
+  "tasks": [
+    {"id": "T1", "name": "项目骨架搭建", "description": "backend/main.py, requirements.txt, static/ 目录结构"},
+    {"id": "T2", "name": "FastAPI 静态文件服务与缓存头", "description": "StaticFiles 挂载，Cache-Control: no-cache 响应头"},
+    {"id": "T3", "name": "HTML 页面结构", "description": "index.html 画布+滑块+坐标面板"},
+    {"id": "T4", "name": "CSS 样式", "description": "左侧滑块面板+右侧3D画布布局"},
+    {"id": "T5", "name": "Three.js 场景初始化", "description": "场景/相机/渲染器/OrbitControls"},
+    {"id": "T6", "name": "三维坐标系渲染", "description": "X/Y/Z轴、刻度、标签、网格面"},
+    {"id": "T7", "name": "参数滑块绑定", "description": "7个滑块DOM绑定和公式计算"},
+    {"id": "T8", "name": "球体位置实时更新", "description": "滑块联动球体位置"},
+    {"id": "T9", "name": "坐标显示面板", "description": "当前X/Y/Z坐标数值展示"},
+    {"id": "T10", "name": "integrity check", "description": "自测完整流程，handoff"}
+  ]
+}

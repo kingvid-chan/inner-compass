@@ -1,0 +1,30 @@
+{
+  "session_id": "claude-0.0.1",
+  "iteration": "0.0.1",
+  "step": "technical_plan",
+  "status": "completed",
+  "timestamp": "2026-06-19T00:00:00Z",
+  "outputs": [
+    "docs/decisions/001-architecture.md"
+  ],
+  "architecture": {
+    "type": "SPA + FastAPI static serving",
+    "rendering": "Three.js WebGL with OrbitControls",
+    "data_flow": "Sliders → formula compute → sphere position + display panel",
+    "modules": {
+      "backend": {
+        "file": "backend/main.py",
+        "responsibilities": ["Static file serving via StaticFiles", "Health check at /projects/inner-compass/healthz", "Cache-Control: no-cache header for HTML"]
+      },
+      "frontend": {
+        "files": ["static/index.html", "static/css/style.css", "static/js/main.js", "static/js/sliders.js"],
+        "responsibilities": {
+          "main.js": "Three.js init, scene setup, axes/grid/labels, sphere, render loop, updateSphere/updateDisplayPanel",
+          "sliders.js": "Slider event binding, formula computation, coordinate update trigger"
+        }
+      }
+    },
+    "cache_strategy": "HTML: Cache-Control no-cache header; Assets: ?v=0.0.1 token under /projects/inner-compass/",
+    "deployment": "Nginx (port 19011) reverse proxy to uvicorn FastAPI"
+  }
+}
