@@ -1,0 +1,51 @@
+{
+  "schema_version": 3,
+  "public_url": "http://120.24.117.67/projects/inner-compass/",
+  "final_url": "http://120.24.117.67/projects/inner-compass/",
+  "base_path_ok": true,
+  "release_version": "0.0.1",
+  "document_response_headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache",
+    "server": "nginx/1.24.0 (Ubuntu)"
+  },
+  "pages": [
+    {
+      "url": "http://120.24.117.67/projects/inner-compass/",
+      "http_status": 200,
+      "title": "inner-compass — 自我内在评价三维坐标系",
+      "ok": true
+    }
+  ],
+  "workflow_checks": [
+    {"name": "page_renders", "ok": true},
+    {"name": "sliders_interactive", "ok": true},
+    {"name": "3d_canvas_present", "ok": true},
+    {"name": "no_console_errors", "ok": true}
+  ],
+  "failed_requests": [],
+  "http_errors": [],
+  "console_errors": [],
+  "screenshots": [
+    "evidence/verification/browser-screenshot-0.0.1.png"
+  ],
+  "visual_review": {
+    "provider": "kimi",
+    "model": "moonshot-v1-vision",
+    "verdict": "pass",
+    "issues": [],
+    "summary": "3D canvas渲染正常，坐标轴和球体标记清晰。7个滑块全部显示且标签正确。深色主题一致，布局合理。零控制台错误。"
+  },
+  "static_assets": [
+    {"url": "http://120.24.117.67/projects/inner-compass/js/main.js?v=0.0.1", "type": "script", "http_status": 200},
+    {"url": "http://120.24.117.67/projects/inner-compass/js/sliders.js?v=0.0.1", "type": "script", "http_status": 200}
+  ],
+  "stylesheets": [
+    {"url": "http://120.24.117.67/projects/inner-compass/css/style.css?v=0.0.1", "resolved_url": "http://120.24.117.67/projects/inner-compass/css/style.css?v=0.0.1", "http_status": 200}
+  ],
+  "asset_probes": [
+    {"url": "http://120.24.117.67/projects/inner-compass/css/style.css?v=0.0.1", "type": "stylesheet", "http_status": 200},
+    {"url": "http://120.24.117.67/projects/inner-compass/js/main.js?v=0.0.1", "type": "script", "http_status": 200},
+    {"url": "http://120.24.117.67/projects/inner-compass/js/sliders.js?v=0.0.1", "type": "script", "http_status": 200}
+  ]
+}
