@@ -1,0 +1,7 @@
+deploy_target: aliyun-cowork
+checkout_commit: 7fa7ab624c71d8269aae45b3cc8f387de1e0e221
+service: active
+healthz_https: 200
+index_https: 200
+css_https: 200
+public_url: https://120.24.117.67/projects/inner-compass/
