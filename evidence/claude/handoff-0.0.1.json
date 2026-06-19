@@ -1,0 +1,42 @@
+{
+  "session_id": "claude-0.0.1",
+  "iteration": "0.0.1",
+  "status": "ready_for_verification",
+  "timestamp": "2026-06-19T00:00:00Z",
+  "technical_plan": {
+    "file": "evidence/claude/technical_plan-0.0.1.json",
+    "summary": "SPA + FastAPI static serving, Three.js WebGL with OrbitControls, Cache-Control no-cache header, version token ?v=0.0.1"
+  },
+  "tasks": [
+    {"id": "T1–T2", "name": "Backend: FastAPI + healthz + static serving + Cache-Control", "status": "completed"},
+    {"id": "T3–T4", "name": "Frontend: HTML structure + CSS layout", "status": "completed"},
+    {"id": "T5–T6", "name": "Three.js 3D coordinate system + axes + labels + reference planes", "status": "completed"},
+    {"id": "T7–T8", "name": "7 parameter sliders + formula computation + real-time sphere update", "status": "completed"},
+    {"id": "T9", "name": "Coordinate display panel", "status": "completed"},
+    {"id": "T10", "name": "Self-test + evidence + handoff", "status": "completed"}
+  ],
+  "implementation_commits": [
+    "ac7ee19: feat: inner-compass 0.0.1 — architecture, backend, frontend implementation",
+    "3b7879a: fix: support HEAD requests for index route"
+  ],
+  "self_test_command": "curl tests for healthz, index, static assets, Cache-Control header, version tokens, CDN resolution",
+  "self_test_result": "10/10 tests passed. All endpoints respond correctly, Cache-Control header present, version tokens in place, CDN resources resolve.",
+  "ready_for_verification": true,
+  "files_created": [
+    "docs/decisions/001-architecture.md",
+    "docs/iterations/0.0.1-tasks.md",
+    "docs/architecture.md (filled from template)",
+    "docs/runbook.md (filled from template)",
+    "backend/main.py",
+    "backend/requirements.txt",
+    "static/index.html",
+    "static/css/style.css",
+    "static/js/main.js",
+    "static/js/sliders.js",
+    "evidence/claude/technical_plan-0.0.1.json",
+    "evidence/claude/tasks_defined-0.0.1.json",
+    "evidence/claude/self_test-0.0.1.json",
+    "evidence/claude/handoff-0.0.1.json"
+  ],
+  "notes": "All work on branch iteration/0.0.1. Not merged to main, no tag, no deploy. Ready for Hermes independent verification."
+}

@@ -1,0 +1,79 @@
+{
+  "session_id": "claude-0.0.1",
+  "iteration": "0.0.1",
+  "step": "self_test",
+  "status": "passed",
+  "timestamp": "2026-06-19T00:00:00Z",
+  "ready_for_verification": true,
+  "tests": [
+    {
+      "name": "healthz_endpoint",
+      "result": "pass",
+      "details": "GET /projects/inner-compass/healthz → 200, {\"status\":\"healthy\",\"project\":\"inner-compass\",\"version\":\"0.0.1\"}"
+    },
+    {
+      "name": "index_page_served",
+      "result": "pass",
+      "details": "GET /projects/inner-compass/ → 200, text/html, 2922 bytes, contains DOCTYPE and 7 slider groups"
+    },
+    {
+      "name": "index_head_request",
+      "result": "pass",
+      "details": "HEAD /projects/inner-compass/ → 200, Cache-Control: no-cache"
+    },
+    {
+      "name": "cache_control_header",
+      "result": "pass",
+      "details": "HTML response includes Cache-Control: no-cache HTTP header (not meta tag)"
+    },
+    {
+      "name": "static_css_served",
+      "result": "pass",
+      "details": "GET /projects/inner-compass/css/style.css → 200, text/css; charset=utf-8"
+    },
+    {
+      "name": "static_js_served",
+      "result": "pass",
+      "details": "GET /projects/inner-compass/js/main.js → 200, text/javascript; charset=utf-8, GET /projects/inner-compass/js/sliders.js → 200"
+    },
+    {
+      "name": "version_tokens",
+      "result": "pass",
+      "details": "HTML references css/style.css?v=0.0.1, js/sliders.js?v=0.0.1, js/main.js?v=0.0.1"
+    },
+    {
+      "name": "threejs_cdn_resolves",
+      "result": "pass",
+      "details": "three@0.160.0/build/three.module.js → 200, OrbitControls.js → 200"
+    },
+    {
+      "name": "base_path_prefix",
+      "result": "pass",
+      "details": "All routes use /projects/inner-compass/ prefix"
+    },
+    {
+      "name": "html_structure",
+      "result": "pass",
+      "details": "7 slider inputs (S, L, Iteration, C, W, F, Delta), 3 coordinate display spans (coord-x, coord-y, coord-z), canvas container"
+    },
+    {
+      "name": "formula_computation",
+      "result": "pass",
+      "details": "Default values (all 5): X=(5*5)*5=125, Y=5²=25, Z=5-5*5=-20. Code review confirms correct formulas in sliders.js"
+    },
+    {
+      "name": "threejs_scene_code",
+      "result": "pass",
+      "details": "main.js: Scene, PerspectiveCamera, WebGLRenderer, OrbitControls, 3 axes (red/green/blue), tick marks, labels, reference planes, sphere with projection lines, animation loop"
+    }
+  ],
+  "server": {
+    "framework": "FastAPI + uvicorn",
+    "port_tested": 19876,
+    "base_path": "/projects/inner-compass/"
+  },
+  "git_commits": [
+    "ac7ee19 feat: inner-compass 0.0.1 — architecture, backend, frontend implementation",
+    "3b7879a fix: support HEAD requests for index route"
+  ]
+}
